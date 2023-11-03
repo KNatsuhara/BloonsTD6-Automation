@@ -1,9 +1,14 @@
 import pyautogui as pyg
+from PIL import Image
+import pytesseract
+import os
 import time
+import cv2
 
 tower_first = ['Hero', 'Dart', 'Boomerang', 'Bomb', 'Tack', 'Ice', 'Glue', 'Sniper', 'Sub', 'Buccaneer']
 tower_second = ['Ace', 'Heli', 'Mortar', 'Dartling', 'Wizard', 'Super', 'Ninja', 'Alchemist', 'Druid', 'Banana']
 tower_third = ['Spike', 'Village', 'Engineer', 'Beast']
+directory = r'Money'
 
 TOWERS_ON_BOARD = []
 
@@ -14,8 +19,10 @@ def Set_Game_Window():
     pyg.dragTo(10,10,1, button='left')
     pyg.click()
 
-def Screen_Shot():
-    image = pyg.screenshot('Test_ScreenShot')
+def Screen_Shot_Money(filename):
+    os.chdir(directory)
+    imgMoney = pyg.screenshot(region=(0,0,300,400))
+    cv2.imwrite(filename, imgMoney)
 
 def Reset_Screen():
     pyg.click(1237,910)
@@ -159,6 +166,14 @@ class Tower:
 # Delete old money images
 
 # Set_Game_Window()
+
+# Dart1 = Tower('Dart')
+# Dart1.Place_Tower()
+
+# Dart2 = Tower('Dart')
+# Dart2.Place_Tower()
+
+
 Hero = Tower('Hero', 627, 428)
 Hero.Place_Tower()
 
