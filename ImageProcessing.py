@@ -3,7 +3,7 @@ from pytesseract import pytesseract
 import cv2
 import numpy as np
 
-image_path = r"Money\testScreenshot.png"
+image_path = r"Money\test.png"
 
 img = cv2.imread(image_path)
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -19,7 +19,6 @@ img[mask>0]=(255,255,255)
 
 invert_img = cv2.bitwise_not(mask)
 
-cv2.imwrite(r"Money/result.png", img)
 cv2.imwrite(r"Money/result1.png", invert_img)
 
 
