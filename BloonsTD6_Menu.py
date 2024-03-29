@@ -24,9 +24,9 @@ def Set_Game_Window():
     pyg.click()
 
 def Screen_Shot_Money():
-    imgMoney = pyg.screenshot(region=(283,72,160,50))
+    imgMoney = pyg.screenshot(region=(279,79,220,42))
     # imgMoney.save(r"Money/" + fname)
-    imgMoney.save(r"C:/Users/Koji/OneDrive/BloonsTD6 Automation\BloonsTD6-Automation/Money/monkeyMoney.png")
+    imgMoney.save(r"Money/monkeyMoney.png")
 
 def Image_Processing():
     image_path = r"Money/monkeyMoney.png"
