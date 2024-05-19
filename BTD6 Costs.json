@@ -1,0 +1,19 @@
+[
+    {
+        "Tower": "Dart",
+        "Tier 1 Path 1":
+        [
+            {"Difficulty": "E", "Value": 120},
+            { "Difficulty": "M", "Value": 140 },
+            { "Difficulty": "H", "Value": 150 },
+            { "Difficulty": "I", "Value": 170 }
+        ],
+        "Tier 2 Path 1":
+        [
+            
+        ]
+    },
+    {
+
+    }
+]

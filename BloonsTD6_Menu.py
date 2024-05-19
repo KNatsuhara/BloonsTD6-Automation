@@ -24,7 +24,7 @@ def Set_Game_Window():
     pyg.click()
 
 def Screen_Shot_Money():
-    imgMoney = pyg.screenshot(region=(279,79,220,42))
+    imgMoney = pyg.screenshot(region=(279,79,200,42))
     # imgMoney.save(r"Money/" + fname)
     imgMoney.save(r"Money/monkeyMoney.png")
 
@@ -82,7 +82,7 @@ class Tower:
         self.yPos = yPos
     
     def Select_Tower(self, towerName):
-        pyg.click(1285,250) #Hero
+        pyg.click(1285,250) # Hero
         pyg.press('esc')
         pyg.press('esc')
         pyg.press('esc')
@@ -129,6 +129,56 @@ class Tower:
             pyg.click(1285,690)
         elif (towerName == 'Buccaneer' or towerName == 'Banana'):
             pyg.click(1385,690)
+        
+    def Check_Tower_Cost(self, towerName):
+        pyg.click(1285,250) # Hero
+        pyg.press('esc')
+        pyg.press('esc')
+        pyg.press('esc')
+        # Scroll to the top
+
+        for x in range(17):
+            pyg.scroll(10)
+        time.sleep(0.5)
+        
+        if towerName in tower_second:
+            for x in range(11):
+                time.sleep(0.1)
+                pyg.scroll(-10)
+        elif towerName in tower_third:
+            for x in range(15):
+                time.sleep(0.1)
+                pyg.scroll(-10)
+            if (towerName == 'Spike'):
+                pyg.click(1285,620) #Tack
+            elif (towerName == 'Village'):
+                pyg.click(1385,620) #Village
+            elif (towerName == 'Engineer'):
+                pyg.click(1285,740) #Engineer
+            elif (towerName == 'Beast'):
+                pyg.click(1385,740) #Beast
+        
+        if (towerName == 'Hero' or towerName == 'Ace'):
+            pyg.click(1285,250)
+        elif (towerName == 'Dart' or towerName == 'Heli'):
+            pyg.click(1385,255)
+        elif (towerName == 'Boomerang' or towerName == 'Mortar'):
+            pyg.click(1285,360)
+        elif (towerName == 'Bomb' or towerName == 'Dartling'):
+            pyg.click(1385,360)
+        elif (towerName == 'Tack' or towerName == 'Wizard'):
+            pyg.click(1285,470)
+        elif (towerName == 'Ice' or towerName == 'Super'):
+            pyg.click(1385,470)
+        elif (towerName == 'Glue' or towerName == 'Ninja'):
+            pyg.click(1285,580)
+        elif (towerName == 'Sniper' or towerName == 'Alchemist'):
+            pyg.click(1385,580)
+        elif (towerName == 'Sub' or towerName == 'Druid'):
+            pyg.click(1285,690)
+        elif (towerName == 'Buccaneer' or towerName == 'Banana'):
+            pyg.click(1385,690)
+
 
     def Place_Tower(self):
         self.Select_Tower(self.towerName)
@@ -223,7 +273,8 @@ class Tower:
 # Dart2.Place_Tower()
 
 if __name__ == "__main__":
-    for i in range(10):
+
+    for i in range(2):
         time.sleep(2)
         Screen_Shot_Money()
         time.sleep(1)
@@ -234,40 +285,40 @@ if __name__ == "__main__":
         IN_GAME_MONEY = Parse_Text(money)
         print(IN_GAME_MONEY)
 
-# Hero = Tower('Hero', 627, 428)
-# Hero.Place_Tower()
+    # Hero = Tower('Hero', 627, 428)
+    # Hero.Place_Tower()
 
-# Druid1 = Tower('Druid', 512, 407)
-# Druid1.Place_Tower()
-# Druid1.UpgradeTier1()
-# Druid1.UpgradeTier2()
+    Druid1 = Tower('Druid', 512, 407)
+    Druid1.Place_Tower()
+    Druid1.UpgradeTier1()
+    Druid1.UpgradeTier2()
 
-# Engineer1 = Tower('Engineer', 512, 459) # 526, 489)
-# Engineer1.Place_Tower()
-# Engineer1.UpgradeTier2()
-# Engineer1.UpgradeTier3()
+    # Engineer1 = Tower('Engineer', 512, 459) # 526, 489)
+    # Engineer1.Place_Tower()
+    # Engineer1.UpgradeTier2()
+    # Engineer1.UpgradeTier3()
 
-# Village1 = Tower('Village', 498, 312)
-# Village1.Place_Tower()
-# Village1.UpgradeTier1()
-# Village1.UpgradeTier1()
-# Village1.UpgradeTier1()
-# Village1.UpgradeTier2()
+    # Village1 = Tower('Village', 498, 312)
+    # Village1.Place_Tower()
+    # Village1.UpgradeTier1()
+    # Village1.UpgradeTier1()
+    # Village1.UpgradeTier1()
+    # Village1.UpgradeTier2()
 
-# Bomb1 = Tower('Bomb', 417, 410)
-# Bomb1.Place_Tower()
+    # Bomb1 = Tower('Bomb', 417, 410)
+    # Bomb1.Place_Tower()
 
-# Wizard1 = Tower('Wizard', 352, 406)
-# Wizard1.Place_Tower()
+    # Wizard1 = Tower('Wizard', 352, 406)
+    # Wizard1.Place_Tower()
 
-# Alchemist1 = Tower('Alchemist', 255, 309)
-# Alchemist1.Place_Tower()
+    # Alchemist1 = Tower('Alchemist', 255, 309)
+    # Alchemist1.Place_Tower()
 
-# Sniper1 = Tower('Sniper', 347, 277)
-# Sniper1.Place_Tower()
+    # Sniper1 = Tower('Sniper', 347, 277)
+    # Sniper1.Place_Tower()
 
-# Sniper2 = Tower('Sniper', 403, 276)
-# Sniper2.Place_Tower()
+    # Sniper2 = Tower('Sniper', 403, 276)
+    # Sniper2.Place_Tower()
 
 
 # Place Tower First
